@@ -1,9 +1,8 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-android-extensions'
-    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -11,13 +10,13 @@ android {
     buildToolsVersion App.buildToolVersion
 
     defaultConfig {
-        applicationId "com.mudassir.restaurantwealthpark"
         minSdkVersion App.minSdk
         targetSdkVersion App.targetSdk
         versionCode App.versionCode
         versionName App.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -27,30 +26,31 @@ android {
         }
     }
 
-    dataBinding {
-        enabled true
-    }
-    kapt {
-        generateStubs = true
-    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = "1.8"
     }
 }
 
-dependencies {
-    implementation project(':domain')
-    implementation project(':data')
+def API_URL = System.getenv("BASE_URL") ?: BASE_URL
 
+android.buildTypes.each { type ->
+    type.buildConfigField "String", "BASE_URL", "\"$API_URL\""
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation project(':domain')
     implementation Libs.KOTLIN
-    implementation Libs.CORE_KTX
-    implementation Libs.APP_COMPAT
-    implementation Libs.SUPPORT_CONSTRAINT_LAYOUT
     implementation Libs.TIMBER
+    implementation Libs.GSON
 
     implementation Libs.RX_ANDROID
     implementation Libs.RX_ADAPTER
@@ -68,29 +68,11 @@ dependencies {
     kapt Libs.DAGGER_COMPILER
     kapt Libs.DAGGER_ANDROID
 
-    implementation Libs.ANDROIDX_LEGACY_SUPPORT
-    implementation Libs.LIFECYCLE_EXT
-    implementation Libs.LIFECYCLE_VIEW_MODEL_KTX
-    implementation Libs.NAVIGATION_FRAGMENT_KTX
-    implementation Libs.NAVIGATION_UI_KTX
-
-    implementation Libs.SHIMMER_LIB
-    implementation Libs.MATERIAL
-    implementation Libs.LIFECYCLE_EXTENSIONS
-    implementation Libs.LIFECYCLE_VIEW_MODEL_KTX
-    implementation Libs.SDP
-
-    implementation Libs.GLIDE
-    kapt Libs.GLIDE_COMPILER
+    api Libs.ROOM_DB
+    api  Libs.ROOM_RXJAVA
+    kapt Libs.ROOM_COMPILER
 
     testImplementation TestLibs.JUNIT
     testImplementation TestLibs.MOCKITO
     testImplementation TestLibs.MOCKITO_HARRMAN
-    testImplementation TestLibs.CORE_TEST
-
-    androidTestImplementation TestLibs.TEST_RULES
-    androidTestImplementation TestLibs.TEST_RUNNER
-    androidTestImplementation TestLibs.ESPRESSO
-    androidTestImplementation TestLibs.ESPRESSO_SUPPORT
-    androidTestImplementation TestLibs.CORE_TEST
 }
