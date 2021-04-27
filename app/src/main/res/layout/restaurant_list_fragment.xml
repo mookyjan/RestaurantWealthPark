@@ -18,10 +18,9 @@
         >
 
 <androidx.constraintlayout.widget.ConstraintLayout
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E6E1E1"
+    android:background="@color/color_background"
     tools:context=".ui.list.RestaurantListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -37,7 +36,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:spanCount="2"
+        android:visibility="@{!viewModel.empty.booleanValue()}"
         tools:listitem="@layout/single_item_city" />
+
+
+    <include
+        android:id="@+id/ly_offline"
+        layout="@layout/error_layout_screen"
+        tools:viewModel="@{viewModel}"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="match_parent"

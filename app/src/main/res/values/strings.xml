@@ -5,4 +5,9 @@
     <string name="txt_city_description">Description of city</string>
     <string name="txt_food_header">Most Popular Japanese Food</string>
     <string name="txt_header">Header title</string>
+
+    <string name="txt_error_title">Something went Wrong ...</string>
+    <string name="txt_error_description">An alien is probably blocking signal.</string>
+    <string name="btn_retry">Retry</string>
+    <string name="txt_no_internet">No Internet Connection Please Try Again</string>
 </resources>

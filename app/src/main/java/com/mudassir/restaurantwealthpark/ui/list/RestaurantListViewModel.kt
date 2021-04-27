@@ -24,16 +24,20 @@ class RestaurantListViewModel @Inject constructor(
         getRestaurantList()
     }
 
-    fun getRestaurantList(isRefresh: Boolean = true) {
+    fun getRestaurantList(isRefresh: Boolean = false) {
         _loading.postValue(true)
+        _empty.value = false
         val result = wealthParkUseCase.execute(isRefresh)
         result.subscribeBy(onSuccess = {
             _loading.postValue(false)
             _cityList.postValue(it)
+            _empty.postValue(false)
             Timber.d { "city list api response $it" }
         }, onError = { e ->
             _loading.postValue(false)
             _error.postValue(e.localizedMessage ?: e.message ?: "Unknown error")
+            _empty.postValue(true)
+            e.printStackTrace()
             Timber.e { "error on restaurant list api ${e.printStackTrace()}" }
         }).addTo(compositeDisposable)
 

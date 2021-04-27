@@ -17,3 +17,9 @@ import com.mudassir.restaurantwealthpark.R
                 .into(imageView)
         }
     }
+
+
+@BindingAdapter("android:visibility")
+fun setVisibility(view: View, value: Boolean?) {
+    view.visibility = if (value!!) View.VISIBLE else View.GONE
+}

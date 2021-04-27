@@ -1,5 +1,7 @@
 package com.mudassir.data.gateway
 
+import com.mudassir.data.local.models.DataEntityLocal
+import com.mudassir.data.local.models.mapToDomain
 import com.mudassir.data.repository.WealthParkDataRepository
 import com.mudassir.domain.entity.DataEntity
 import com.mudassir.domain.gateway.WealthParkDataGateWay
@@ -17,6 +19,8 @@ class WealthParkDataGateWayImpl constructor(private val wealthParkDataRepository
 
     override fun getRestaurantData(isRefresh: Boolean?): Single<DataEntity> {
 
-        return wealthParkDataRepository.getRestaurantData(isRefresh)
+        return wealthParkDataRepository.getRestaurantData(isRefresh).map {
+            it.mapToDomain()
+        }
     }
 }
