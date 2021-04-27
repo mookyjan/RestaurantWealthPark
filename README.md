@@ -29,11 +29,11 @@ This project follows Clean Architecture with MVVM with Clean Architecture Design
 
 
 # Architecture Design
-![alt text](https://github.com/mookyjan/MoviesApp/blob/main/diagram/clean%20architecture%20design.png)
+![alt text](https://github.com/mookyjan/RestaurantWealthPark/tree/develop/diagram/clean%20architecture%20design.png)
 
-![alt text](https://github.com/mookyjan/MoviesApp/blob/main/diagram/clean-mvvm.png)
+![alt text](https://github.com/mookyjan/RestaurantWealthPark/tree/develop/diagram/clean-mvvm.png)
 
-![alt text](https://github.com/mookyjan/MoviesApp/blob/main/diagram/project%20structure.png)
+![alt text](https://github.com/mookyjan/RestaurantWealthPark/tree/develop/diagram/project%20structure.png)
 
 
 # Modules
@@ -57,11 +57,11 @@ comments are written with the function that what it will do.
 also TODO are given in the area which we can improve more.
 
 # Screenshots
-![alt text](https://github.com/mookyjan/MoviesApp/blob/main/screenshots/device-2020-11-22-184042.png)
+![alt text](https://github.com/mookyjan/RestaurantWealthPark/tree/develop/screenshots/device-2021-04-27-220927.png)
 
-![alt text](https://github.com/mookyjan/MoviesApp/blob/main/screenshots/device-2020-11-23-073954.png)
+![alt text](https://github.com/mookyjan/RestaurantWealthPark/tree/develop/screenshots/device-2021-04-27-221524.png)
 
-![alt text](https://github.com/mookyjan/MoviesApp/blob/main/screenshots/device-2020-11-23-081505.png)
+![alt text](https://github.com/mookyjan/RestaurantWealthPark/tree/develop/screenshots/device-2021-04-27-221852.png)
 
 
 ##TODO
