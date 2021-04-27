@@ -65,6 +65,10 @@ dependencies {
 
     implementation Libs.DAGGER_SUPPORT
     implementation Libs.DAGGER_LIB
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     kapt Libs.DAGGER_COMPILER
     kapt Libs.DAGGER_ANDROID
 
@@ -82,6 +86,9 @@ dependencies {
 
     implementation Libs.GLIDE
     kapt Libs.GLIDE_COMPILER
+
+    implementation Libs.GROUPIE
+    implementation Libs.GROUPIE_BINDING
 
     testImplementation TestLibs.JUNIT
     testImplementation TestLibs.MOCKITO

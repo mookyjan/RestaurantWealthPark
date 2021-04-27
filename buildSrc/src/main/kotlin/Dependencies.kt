@@ -10,7 +10,7 @@ object App{
 object Versions {
     const val GRADLE = "4.0.1"
     const val KOTLIN = "1.4.32"
-    const val RETROFIT = "2.8.2"
+    const val RETROFIT = "2.9.0"
     const val OK_HTTP = "4.7.2"
     const val TIMBER = "1.5.1"
     const val APP_COMPAT = "1.2.0"
@@ -30,8 +30,8 @@ object Versions {
     const val COIL = "0.11.0"
     const val K_ANDROID = "0.8.7"
     const val LOTTIE = "3.4.0"
-    const val RX_KOTLIN = "2.4.0"
-    const val RX_ANDROID = "2.1.1"
+    const val RX_KOTLIN = "3.0.1"
+    const val RX_ANDROID = "3.0.0"
     //    const val OKHTTP = "3.12.0"
     const val MOSHI = "1.9.0"
     const val MOSHI_LAZY_ADAPTER  = "2.2"
@@ -44,6 +44,7 @@ object Versions {
     const val PAGING ="3.0.0-alpha09"
     const val GLIDE ="4.12.0"
     const val GLIDE_PALETTE ="2.1.2"
+    const val GROUPIE ="2.9.0"
     /* test */
     const val JUNIT = "4.12"
     const val MOCKITO ="3.1.0"
@@ -68,9 +69,9 @@ object Libs {
     const val RETROFIT_MOSHI_CONVERTER = "com.squareup.retrofit2:converter-moshi:${Versions.RETROFIT}"
     const val MOSHI ="com.squareup.moshi:moshi-kotlin:${Versions.MOSHI}"
     const val MOSHI_ADAPTER= "com.serjltt.moshi:moshi-lazy-adapters:${Versions.MOSHI_LAZY_ADAPTER}"
-    const val RX_ADAPTER ="com.squareup.retrofit2:adapter-rxjava2:${Versions.RETROFIT}"
-    const val RX_KOTLIN = "io.reactivex.rxjava2:rxkotlin:${Versions.RX_KOTLIN}"
-    const val RX_ANDROID=  "io.reactivex.rxjava2:rxandroid:${Versions.RX_ANDROID}"
+    const val RX_ADAPTER ="com.squareup.retrofit2:adapter-rxjava3:${Versions.RETROFIT}"
+    const val RX_KOTLIN = "io.reactivex.rxjava3:rxkotlin:${Versions.RX_KOTLIN}"
+    const val RX_ANDROID=  "io.reactivex.rxjava3:rxandroid:${Versions.RX_ANDROID}"
     const val SDP ="com.intuit.sdp:sdp-android:${Versions.SDP}"
     // Retrofit will use okhttp 4 (it tas binary capability with okhttp 3)
     // See: https://square.github.io/okhttp/upgrading_to_okhttp_4/
@@ -106,6 +107,8 @@ object Libs {
     const val GLIDE ="com.github.bumptech.glide:glide:${Versions.GLIDE}"
     const val GLIDE_COMPILER ="com.github.bumptech.glide:compiler:${Versions.GLIDE}"
     const val GLIDE_PLATTE="com.github.florent37:glidepalette:${Versions.GLIDE_PALETTE}"
+    const val GROUPIE = "com.xwray:groupie:${Versions.GROUPIE}"
+    const val GROUPIE_BINDING = "com.xwray:groupie-databinding:${Versions.GROUPIE}"
 }
 
 object TestLibs {

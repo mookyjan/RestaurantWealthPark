@@ -13,4 +13,67 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+     <!-- Typography -->
+    <style name="BaseTextView" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="BaseTextView.OpenSansRegular">
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+    </style>
+
+    <style name="BaseTextView.OpenSansItalic">
+        <item name="android:fontFamily">@font/open_sans_italic</item>
+        <item name="android:textSize">@dimen/_16sdp</item>
+    </style>
+
+    <style name="BaseTextView.OpenSansBold">
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/purple_700</item>
+        <item name="colorPrimaryDark">@color/teal_700</item>
+        <item name="colorAccent">@color/teal_200</item>
+    </style>
+
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/purple_700</item>
+        <item name="colorPrimaryDark">@color/teal_700</item>
+        <item name="colorAccent">@color/teal_200</item>
+        <item name="android:textSize">@dimen/_16sdp</item>
+
+    </style>
+
+
+
+<!--    <style name="BaseTextView.RalewayRegular">-->
+<!--        <item name="android:fontFamily">@font/raleway_regular</item>-->
+<!--        <item name="android:textSize">@dimen/_16sdp</item>-->
+<!--    </style>-->
+
+<!--    <style name="BaseTextView.RalewayBold">-->
+<!--        <item name="android:fontFamily">@font/raleway_bold</item>-->
+<!--        <item name="android:textSize">@dimen/_16sdp</item>-->
+<!--    </style>-->
+
+
+
+
+
+
+
+    <style name="BaseTextView.OpenSansSemibold">
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
+    </style>
+
+
+
 </resources>

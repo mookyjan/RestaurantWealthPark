@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">RestaurantWealthPark</string>
+    <string name="txt_city_header">Main Cities in Japan</string>
+    <string name="txt_city">City</string>
+    <string name="txt_city_description">Description of city</string>
+    <string name="txt_food_header">Most Popular Japanese Food</string>
+    <string name="txt_header">Header title</string>
 </resources>
