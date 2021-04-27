@@ -9,3 +9,4 @@ data class DataEntity(
     @Json(name = "foods")
     val foods: List<Food>
 )
+

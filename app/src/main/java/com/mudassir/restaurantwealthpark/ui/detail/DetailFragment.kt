@@ -1,5 +1,6 @@
 package com.mudassir.restaurantwealthpark.ui.detail
 
+import android.content.Context
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.mudassir.restaurantwealthpark.R
 import com.mudassir.restaurantwealthpark.databinding.DetailFragmentBinding
+import com.mudassir.restaurantwealthpark.di.module.ViewModelFactory
+import com.mudassir.restaurantwealthpark.ui.list.RestaurantListViewModel
+import dagger.android.support.AndroidSupportInjection
+import javax.inject.Inject
 
 class DetailFragment : Fragment() {
 
@@ -17,11 +23,16 @@ class DetailFragment : Fragment() {
         fun newInstance() = DetailFragment()
     }
 
-    private lateinit var viewModel: DetailViewModel
-
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+    private val viewModel: DetailViewModel by viewModels { viewModelFactory }
     val args: DetailFragmentArgs by navArgs()
     private lateinit var mBinding: DetailFragmentBinding
 
+    override fun onAttach(context: Context) {
+        AndroidSupportInjection.inject(this)
+        super.onAttach(context)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,8 +51,6 @@ class DetailFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
-
         mBinding.viewModel = viewModel
         setupIntentData()
     }
