@@ -35,8 +35,7 @@ class WealthParkDataRepository constructor(
                     remote
                 },remote).firstElement().toSingle()
 
-//                Single.concat(local.onErrorResumeNext(remote), remote)
-//                    .firstElement().toSingle()
+
             }
 
 //        return wealthParkRemoteDataSource.getRestaurantData()
